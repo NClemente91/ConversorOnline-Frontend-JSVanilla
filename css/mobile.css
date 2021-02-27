@@ -1,0 +1,101 @@
+/* Estilos genéricos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+.pantallaInicial,
+.conversorDivisas,
+.tiposDeCambio{
+    min-width: 320px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.pantallaInicial{
+    background-image: url("../assets/imagenDeFondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.textoPpal{
+    width: 100%;
+    height: 20%;
+    position: relative;
+    z-index: 5;
+    top: 35%;
+    text-align: center;
+    color: rgb(20, 14, 14);
+}
+.textoPpal h1{
+    font-size: 4rem;
+}
+.textoPpal p{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.conversorDivisas{
+    background-color: #007F85;
+}
+.conversorTitulo,
+.tiposDeCambioTitulo{
+    width: 100%;
+    height: 12%;
+    position: relative;
+    z-index: 5;
+    top: 2%;
+    text-align: center;
+    color: rgb(20, 14, 14);
+}
+.conversorTitulo h2{
+    font-size: 2.2rem;
+}
+.conversorTitulo p{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+.tiposDeCambio{
+    background-color: #2EAD8C;
+}
+.tiposDeCambioTitulo h2{
+    font-size: 2.2rem;
+}
+
+.informacion{
+    min-width: 320px;
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+    background-color: #1C5163;
+}
+.informacionTitulo{
+    width: 100%;
+    height: 24%;
+    position: relative;
+    z-index: 5;
+    top: 4%;
+    text-align: center;
+    color: rgb(20, 14, 14);
+}
+.informacionTitulo h2{
+    font-size: 2.2rem;
+}
+
+.espacioPrueba{
+    width: 60%;
+    height: 60vh;
+    margin: 0 auto;
+    position: relative;
+    top: 40px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
