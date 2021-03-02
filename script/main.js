@@ -25,9 +25,9 @@ class Conversor {
     }
 }
 
-let montoEnDolares = parseInt(prompt("Ingrese la cantidad de dolares que quiere comprar:"));
-let primeraConversion = new Conversor(montoEnDolares, "Dolar", "Peso");
+// let montoEnDolares = parseInt(prompt("Ingrese la cantidad de dolares que quiere comprar:"));
+// let primeraConversion = new Conversor(montoEnDolares, "Dolar", "Peso");
 
-setTimeout(() => {
-     alert(`Para comprar USD${montoEnDolares} se necesitan $${primeraConversion.conversorDeMoneda()}`);
-}, 2000);
+// setTimeout(() => {
+//      alert(`Para comprar USD${montoEnDolares} se necesitan $${primeraConversion.conversorDeMoneda()}`);
+// }, 2000);

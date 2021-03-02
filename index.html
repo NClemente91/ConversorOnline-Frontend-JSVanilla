@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor Online</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="./css/mobile.css">
     <link rel="stylesheet" href="./css/tablet.css" media="screen and (min-width: 768px)">
     <link rel="stylesheet" href="./css/desktop.css" media="screen and (min-width: 1024px)">
@@ -33,10 +33,54 @@
         <section class="conversorDivisas">
             <div class="conversorTitulo">
                 <h2>Conversor de Monedas</h2>
-                <p>Tipo de cambio oficial *</p>
+                <p>Tipo de cambio promedio de mercado. No se tienen en cuenta impuestos internos de cada pais</p>
             </div>
-            <div class="espacioPrueba">
-                <!-- Formulario de cambio -->
+            <div class="conversorContainer">
+                <div class="conversorContainerBotones">
+                    <button class="pestañaConversor">Conversor</button>
+                    <button class="pestañaHistorial">Historial</button>
+                </div>
+                <div class="conversorContainerPrincipal">
+                    <div class="containerFormulario">   <!-- formulario -->
+                        <form>
+                            <div class="formularioEleccion">
+                                <label for="Name">Cantidad</label>
+                                <input type="number" id="Name" name="Name" />
+                            </div>
+                            <div class="formularioEleccion sup">
+                                <label for="deMoneda">De</label>
+                                <select id="deMoneda">
+                                    <option>Seleccione</option>
+                                    <option>ARG</option>
+                                    <option>USD</option>
+                                    <option>EUR</option>
+                                    <option>GBP</option>
+                                    <option>CLP</option>
+                                </select>
+                            </div>
+                            <div class="formularioBoton">
+                                <button class="buttonRevertir"></button>
+                            </div>
+                            <div class="formularioEleccion">
+                                <label for="aMoneda">A</label>
+                                <select id="aMoneda">
+                                    <option>Seleccione</option>
+                                    <option>ARG</option>
+                                    <option>USD</option>
+                                    <option>EUR</option>
+                                    <option>GBP</option>
+                                    <option>CLP</option>
+                                </select>
+                            </div>
+                            <div class="formularioBoton sup">
+                                <button class="buttonConvertir">Convertir</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div>   <!-- texto -->
+                            
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -69,8 +113,8 @@
 
     <!-- Achivos js -->
     <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="./script/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="./script/bootstrap.bundle.min.js"></script> -->
     <!-- Porpio -->
     <script src="./script/main.js"></script>
 </body>
