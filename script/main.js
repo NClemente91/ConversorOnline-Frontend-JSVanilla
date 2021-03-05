@@ -1,12 +1,3 @@
-// let montoEnDolares = parseInt(prompt("Ingrese la cantidad de dolares que quiere comprar:"));
-
-// let conversor = (monto) => {
-//     let cantidadCambiada = monto*90*1.3*1.3;
-//     return cantidadCambiada;
-// }
-
-// let montoEnPesos = conversor(montoEnDolares);
-
 class Conversor {
     
     constructor(cantidad, deMoneda, aMoneda) {
@@ -25,9 +16,24 @@ class Conversor {
     }
 }
 
-// let montoEnDolares = parseInt(prompt("Ingrese la cantidad de dolares que quiere comprar:"));
-// let primeraConversion = new Conversor(montoEnDolares, "Dolar", "Peso");
+let historial = [];
 
-// setTimeout(() => {
-//      alert(`Para comprar USD${montoEnDolares} se necesitan $${primeraConversion.conversorDeMoneda()}`);
-// }, 2000);
+alert("Para salir del conversor ingresar un monto de 0 (cero)");
+
+let verificador;
+
+do {
+    let montoEnDolares = parseInt(prompt("Ingrese la cantidad de dolares que quiere comprar:"));
+    if(montoEnDolares !==0){
+        verificador = true;
+        let primeraConversion = new Conversor(montoEnDolares, "Dolar", "Peso");
+        historial.push(primeraConversion);
+        alert(`Para comprar USD${montoEnDolares} se necesitan $${primeraConversion.conversorDeMoneda()}`);
+    } else {
+        verificador = false;
+    }
+} while (verificador);
+
+console.log(historial);
+let montosConvertidos = historial.map(historial => historial.cantidad);
+alert(`Montos ingresados en USD: ${montosConvertidos}`);
