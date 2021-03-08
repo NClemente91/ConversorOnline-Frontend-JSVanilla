@@ -1,4 +1,5 @@
 /* Estilos genéricos */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -6,47 +7,41 @@
 }
 html{
     font-size: 62.5%;
+    font-family: 'Noto Sans', sans-serif;
 }
 body{
     min-width: 320px;
 }
 
-.pantallaInicial,
-.conversorDivisas,
-.tiposDeCambio{
+.pantallaInicial{
     min-width: 320px;
     width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-
-.pantallaInicial{
-    background-image: url("../assets/imagenDeFondo.jpg");
+    height: 450px;
+    background-image: url("../assets/320x450.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .textoPpal{
     width: 100%;
-    height: 20%;
+    height: 30%;
     position: relative;
+    top: 30px;
     z-index: 5;
-    top: 35%;
     text-align: center;
-    color: rgb(20, 14, 14);
+    color: white;
+    font-style: italic;
 }
 .textoPpal h1{
-    font-size: 4rem;
+    font-size: 2.5rem;
 }
 .textoPpal p{
     width: 80%;
-    margin: 0 auto;
-    font-size: 2rem;
+    margin: 8px auto;
+    font-size: 1.8rem;
 }
 
-.conversorDivisas{
-    background-color: #007F85;
-}
+
 .conversorTitulo,
 .tiposDeCambioTitulo{
     width: 100%;
@@ -66,11 +61,170 @@ body{
     font-size: 1.6rem;
 }
 
+.conversorDivisas{
+    height: 100px;
+}
+.conversorContainer{
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: -310px;
+    box-shadow: 5px 5px 10px 1px black;
+    border-radius: 5px;
+    background-color: white;
+}
+.conversorContainerBotones{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+.conversorContainerBotones button{
+    width: 100%;
+    font-size: 1.6rem;
+    background-color: white;
+}
+.conversorContainerBotones button:hover{
+    color: rgb(45, 144, 255);
+    border: none;
+    background-color: rgb(236, 233, 233);
+}
+.pestañaConversor{
+    border: none; 
+    border-radius: 5px 0 0 0;
+}
+.pestañaHistorial{
+    border: none;
+    border-radius: 0 5px 0 0;
+}
+.conversorContainerPrincipal{
+    width: 90%;
+    height: 350px;
+    margin: 5px auto;
+}
+.containerFormulario{
+    width: 90%;
+    height: 75%;
+    margin: 0 auto;
+}
+.formularioEleccion{
+    width: 100%;
+    max-width: 300px;
+    height: 60px;
+    margin: 0 auto;
+}
+.sup{
+    margin-top: 10px;
+}
+.formularioEleccion label{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.6rem;
+    width: 100%;
+    margin-left: 5px;
+}
+.formularioEleccion input, select{
+    font-family: 'Noto Sans', sans-serif;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    border: 3px solid gray;
+}
+.formularioBoton{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+}
+.buttonRevertir{
+    width: 20px;
+    height: 20px;
+    margin: 5px auto;
+    border: none;
+    background-image: url(../assets/arrows-couple.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.buttonConvertir{
+    width: 120px;
+    background: linear-gradient(to left, #78b0db, #26a9e0);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+.textoFormulario{
+    width: 90%;
+    margin: 6% auto;
+}
+.textoFormulario p{
+    text-align: center;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+}
+
 .tiposDeCambio{
-    background-color: #2EAD8C;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+}
+.tiposDeCambioTitulo{
+    height: 80px;
+    position: relative;
+    top: 20px;
+    margin: 0 auto;
 }
 .tiposDeCambioTitulo h2{
-    font-size: 2.5rem;
+    text-align: center;
+    color: #2B388F;
+    font-style: italic;
+    font-size: 2.2rem;
+}
+.tiposDeCambioTitulo p{
+    height: 20px;
+    text-align: center;
+    color: #2B388F;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+.tiposDeCambioContainer{
+    width: 90%;
+    height: 390px;
+    margin: 0 auto;
+    position: relative;
+    top: 30px;
+}
+.tablaTiposDeCambio{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+}
+.encabezadoTiposDeCambio,
+.primariaTiposDeCambio, 
+.secundariaTiposDeCambio {
+    height: 50px;
+    text-align: center;
+    font-size: 1.8rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.encabezadoTiposDeCambio div,
+.primariaTiposDeCambio div, 
+.secundariaTiposDeCambio div{
+    justify-self: center;
+    align-self: center;
+}
+.encabezadoTiposDeCambio{
+    height: 30px;
+    font-size: 1.6rem;
+    font-style: italic;
+}
+.encabezadoMonedaPpal{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #2B388F;
 }
 
 .informacion{
@@ -91,80 +245,4 @@ body{
 }
 .informacionTitulo h2{
     font-size: 2.2rem;
-}
-
-.conversorContainer{
-    width: 80%;
-    height: 75%;
-    margin: 5% auto;
-    position: relative;
-    border: 2px solid gray;
-    box-shadow: gray;
-    border-radius: 5px;
-    background-color: white;
-}
-.conversorContainerBotones{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-}
-.conversorContainerBotones button{
-    width: 100%;
-    font-size: 1.6rem;
-    border: 1px solid gray;
-    background-color: white;
-}
-.pestañaConversor{
-    border-radius: 5px 0 0 0;
-}
-.pestañaHistorial{
-    border-radius: 0 5px 0 0;
-}
-.conversorContainerPrincipal{
-    width: 90%;
-    height: 90%;
-    margin: 5% auto;
-}
-.containerFormulario{
-    width: 90%;
-    height: 60%;
-    margin: 0 auto;
-}
-.formularioEleccion{
-    width: 100%;
-    max-width: 300px;
-    height: 60px;
-    margin: 0 auto;
-}
-.sup{
-    margin-top: 10px;
-}
-.formularioEleccion label{
-    font-size: 1.8rem;
-    width: 100%;
-    margin-left: 5px;
-}
-.formularioEleccion input, select{
-    width: 100%;
-    height: 30px;
-}
-.formularioBoton{
-    width: 100%;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-}
-.buttonRevertir{
-    width: 20px;
-    height: 20px;
-    margin: 5px auto;
-    border: none;
-    background-image: url(../assets/arrows-couple.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.buttonConvertir{
-    width: 120px;
 }
