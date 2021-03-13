@@ -9,13 +9,16 @@ html{
     font-size: 62.5%;
     font-family: 'Noto Sans', sans-serif;
 }
-body{
-    min-width: 320px;
+header,
+main,
+footer{
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .pantallaInicial{
     min-width: 320px;
-    width: 100vw;
+    width: 100%;
     height: 450px;
     background-image: url("../assets/320x450.png");
     background-position: center;
@@ -62,12 +65,14 @@ body{
 }
 
 .conversorDivisas{
+    min-width: 320px;
+    width: 100%;
     height: 100px;
 }
 .conversorContainer{
     width: 80%;
     height: 400px;
-    margin: 0 auto;
+    margin: 0 10%;
     position: relative;
     top: -310px;
     box-shadow: 5px 5px 10px 1px black;
@@ -99,6 +104,12 @@ body{
     border-radius: 0 5px 0 0;
 }
 .conversorContainerPrincipal{
+    width: 90%;
+    height: 350px;
+    margin: 5px auto;
+}
+.conversorContainerHistorial,
+.containerFormulario{
     width: 90%;
     height: 350px;
     margin: 5px auto;
@@ -165,8 +176,9 @@ body{
 }
 
 .tiposDeCambio{
+    min-width: 320px;
     width: 90%;
-    height: 500px;
+    height: 520px;
     margin: 0 auto;
 }
 .tiposDeCambioTitulo{
@@ -215,6 +227,11 @@ body{
     justify-self: center;
     align-self: center;
 }
+.primariaTiposDeCambio span{
+    display: block;
+    text-align: center;
+    margin: 13px auto;
+}
 .encabezadoTiposDeCambio{
     height: 30px;
     font-size: 1.6rem;
@@ -230,19 +247,62 @@ body{
 .informacion{
     min-width: 320px;
     width: 100vw;
-    height: 50vh;
-    position: relative;
-    background-color: #1C5163;
+    height: 200px;
+    background-image: url("../assets/320x200.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.informacionTitulo{
+.informacionEnlaces{
+    width: 220px;
+    height: 170px;
+    margin: 0 auto;
+}
+.informacionEnlaces h3{
+    height: 35px;
+    padding-top: 20px;
+    font-size: 1.6rem;
+    color: white;
+}
+.informacionEnlaces ul{
+    height: 100px;
+    margin: 25px 0 15px 20px;
+}
+.informacionEnlaces ul li{
+    list-style: none;
+    height: 30px;
+}
+.informacionEnlaces ul li a{
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+}
+.informacionFinal{
     width: 100%;
-    height: 24%;
-    position: relative;
-    z-index: 5;
-    top: 4%;
-    text-align: center;
-    color: rgb(20, 14, 14);
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
 }
-.informacionTitulo h2{
-    font-size: 2.2rem;
+.informacionFinal div{
+    width: 45%;
+    text-align: center;
+}
+.informacionFinal div p{
+    font-size: 1.3rem;
+    color: white;
+}
+
+
+.pestaniaConversor{
+    display: none;
+}
+.pestaniaHistorial{
+    display: none;
+}
+.estiloH3Historial{
+    font-size: 1.8rem;
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    font-weight: 400;
 }

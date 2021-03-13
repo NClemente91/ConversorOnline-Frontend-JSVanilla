@@ -1,0 +1,12 @@
+.pantallaInicial{
+    background-image: url("../assets/768x450.png");
+}
+
+.informacion{
+    background-image: url("../assets/768x200.png");
+}
+.informacionEnlaces{
+    width: 28%;
+    height: 170px;
+    margin: 0 auto;
+}

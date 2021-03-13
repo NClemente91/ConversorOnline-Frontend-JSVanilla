@@ -17,7 +17,7 @@
 
     <main>
         <!-- Sección - Inicial -->
-        <section class="pantallaInicial">
+        <section class="pantallaInicial" id="conversorDiv">
             <div class="textoPpal">
                 <h1>CONVERSOR ONLINE</h1>
                 <p>El mejor conversor de divisas de la web</p>
@@ -28,10 +28,10 @@
         <section class="conversorDivisas">
             <div class="conversorContainer">
                 <div class="conversorContainerBotones">
-                    <button class="pestañaConversor">Conversor</button>
-                    <button class="pestañaHistorial">Historial</button>
+                    <button class="pestañaConversor" id="btnConversor">Conversor</button>
+                    <button class="pestañaHistorial" id="btnHistorial">Historial</button>
                 </div>
-                <div class="conversorContainerPrincipal">
+                <div class="conversorContainerPrincipal" id="pestaniaUno">
                     <div class="containerFormulario">   <!-- formulario -->
                         <form>
                             <div class="formularioEleccion">
@@ -45,8 +45,6 @@
                                     <option>ARG</option>
                                     <option>USD</option>
                                     <option>EUR</option>
-                                    <option>GBP</option>
-                                    <option>CLP</option>
                                 </select>
                             </div>
                             <div class="formularioBoton">
@@ -59,12 +57,11 @@
                                     <option>ARG</option>
                                     <option>USD</option>
                                     <option>EUR</option>
-                                    <option>GBP</option>
-                                    <option>CLP</option>
                                 </select>
                             </div>
                             <div class="formularioBoton sup">
-                                <button class="buttonConvertir">Convertir</button>
+                                <input type="button" value="Convertir" class="buttonConvertir" id="convertir">
+                                <!-- <button class="buttonConvertir" id="convertir">Convertir</button> -->
                             </div>
                         </form>
                     </div>
@@ -72,11 +69,14 @@
                         <p>Tipo de cambio promedio de mercado. No se tienen en cuenta impuestos internos de cada pais</p>
                     </div>
                 </div>
+                <div class="conversorContainerHistorial pestaniaHistorial" id="pestaniaDos">
+
+                </div>
             </div>
         </section>
 
         <!-- Seccion - Tipo de cambio actual -->
-        <section class="tiposDeCambio">
+        <section class="tiposDeCambio" id="tipoCambio">
             <div class="tiposDeCambioTitulo">
                 <h2>TIPO DE CAMBIO EN TIEMPO REAL</h2>
                 <p>08 de Marzo 2021, 17:35hs</p>
@@ -91,7 +91,7 @@
                             <span>Importe</span>
                         </div>
                     </div>
-                    <div class="primariaTiposDeCambio">
+                    <div class="primariaTiposDeCambio bordesRedondos">
                         <div class="encabezadoMonedaPpal">
                             <span>Peso Argentino</span>
                         </div>                    
@@ -131,24 +131,45 @@
                             <span>0.0140</span>
                         </div>
                     </div>
+                    <div class="secundariaTiposDeCambio">
+                        <div>
+                            <span>Peso Mexicano</span>
+                        </div>
+                        <div>
+                            <span>0.2387</span>
+                        </div>
+                    </div>
+                    <div class="secundariaTiposDeCambio">
+                        <div>
+                            <span>Real brasilero</span>
+                        </div>
+                        <div>
+                            <span>0.0635</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seccion - Recibi informacion  -->
-        <section class="informacion">
-            <div class="informacionTitulo">
-                <h2>Recibi informacion</h2>
-            </div>
-            <form>
-                <!-- Formulario de inscripcion -->
-            </form>
-        </section>
-
     </main>
     
-    <footer>
-
+    <footer class="informacion">
+        <div class="informacionEnlaces">
+            <h3>Herramientas y Recursos</h3>
+            <ul>
+                <li><a href="#conversorDiv">Conversor de Monedas</a></li>
+                <li><a href="#tipoCambio">Tipo de Cambio Actualizado</a></li>
+                <li><a href="">Preguntas Frecuentes</a></li>
+            </ul>
+        </div>
+        <div class="informacionFinal">
+            <div>
+                <p>Pagina Educativa</p>
+            </div>
+            <div>
+                <p>2021</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Achivos js -->
