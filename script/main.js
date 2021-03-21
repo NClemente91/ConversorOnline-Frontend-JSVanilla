@@ -48,6 +48,7 @@ let generarConversion = () => {
     } else {
         let conversionX = new Conversor(cantidad, deMoneda, aMoneda);
         let resultadoFinal = conversionX.conversorDeMoneda();
+        localStorage.setItem('Conversion', resultadoFinal);
         historialDeConversiones.push(resultadoFinal);
         const nodoPadre = document.getElementById("pestaniaDos");
         let h3 = document.createElement("h3");
@@ -77,26 +78,3 @@ const pestania1 = document.getElementById("pestaniaUno");
 const pestania2 = document.getElementById("pestaniaDos");
 botonPestaniaConversor.addEventListener("click", mostrarQuitar1);
 botonPestaniaHistorial.addEventListener("click", mostrarQuitar2);
-
-// let historial = [];
-
-// alert("Para salir del conversor ingresar un monto de 0 (cero)");
-
-// let verificador;
-
-// do {
-//     let montoEnDolares = parseInt(prompt("Ingrese la cantidad de dolares que quiere comprar:"));
-//     if(montoEnDolares !==0){
-//         verificador = true;
-//         let primeraConversion = new Conversor(montoEnDolares, "Dolar", "Peso");
-//         historial.push(primeraConversion);
-//         alert(`Para comprar USD${montoEnDolares} se necesitan $${primeraConversion.conversorDeMoneda()}`);
-//     } else {
-//         verificador = false;
-//     }
-// } while (verificador);
-
-// console.log(historial);
-// let montosConvertidos = historial.map(historial => historial.cantidad);
-// alert(`Montos ingresados en USD: ${montosConvertidos}`);
-
