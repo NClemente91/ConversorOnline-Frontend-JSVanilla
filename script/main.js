@@ -132,6 +132,9 @@ const NEWURL = "https://api.cambio.today/v1/full/EUR/json?key=8778|1SOUV6jk0^x_o
 let datosCurrency;
 $.getJSON(NEWURL, function (respuesta,estado) {
     if(estado === "success"){
-        console.log(respuesta);
+        datosCurrency = respuesta;
     }
 });
+setTimeout(() => {
+    console.log(datosCurrency);
+}, 3000);
