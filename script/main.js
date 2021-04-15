@@ -126,3 +126,12 @@ $.getJSON(URLJSON, function (respuesta,estado) {
         misDatos = respuesta;
     }
 });
+
+
+const NEWURL = "https://api.cambio.today/v1/full/EUR/json?key=8778|1SOUV6jk0^x_oS3p7Egfqb^snr^EBmuR";
+let datosCurrency;
+$.getJSON(NEWURL, function (respuesta,estado) {
+    if(estado === "success"){
+        console.log(respuesta);
+    }
+});
