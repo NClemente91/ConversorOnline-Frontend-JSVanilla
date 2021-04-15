@@ -68,6 +68,7 @@ footer{
     min-width: 320px;
     width: 100%;
     height: 100px;
+    position: relative;
 }
 .conversorContainer{
     width: 80%;
@@ -78,7 +79,45 @@ footer{
     box-shadow: 5px 5px 10px 1px black;
     border-radius: 5px;
     background-color: white;
+    /* display: none; */
 }
+.conversorModal{
+    width: 80%;
+    height: 400px;
+    margin: 0 10%;
+    position: absolute;
+    top: -310px;
+    z-index: 10;
+    display: none;
+}
+.modal{
+    width: 80%;
+    height: 50%;
+    margin: 0 auto;
+    margin-top: 30%;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 3px 3px 6px 1px black;
+}
+.buttonCerrar{
+    position: absolute;
+    right: 12%;
+    margin-top: 5px;
+}
+.contenidoModal{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenidoModal h4{
+    height: 100%;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
 .conversorContainerBotones{
     width: 100%;
     height: 40px;
@@ -299,7 +338,7 @@ footer{
 .pestaniaHistorial{
     display: none;
 }
-.estiloH3Historial{
+.conversorContainerHistorial h3{
     font-size: 1.8rem;
     width: 80%;
     margin: 10px auto;

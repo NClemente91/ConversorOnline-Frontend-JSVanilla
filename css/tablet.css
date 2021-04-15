@@ -10,3 +10,11 @@
     height: 170px;
     margin: 0 auto;
 }
+
+.modal{
+    width: 60%;
+    margin-top: 10%;
+}
+.buttonCerrar{
+    right: 21%;
+}

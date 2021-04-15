@@ -47,7 +47,8 @@
                                 </select>
                             </div>
                             <div class="formularioBoton">
-                                <button class="buttonRevertir"></button>
+                                <input type="button" class="buttonRevertir" id="revertir">
+                                <!-- <button class="buttonRevertir"></button> -->
                             </div>
                             <div class="formularioEleccion">
                                 <label for="aMoneda">A</label>
@@ -70,6 +71,16 @@
                 </div>
                 <div class="conversorContainerHistorial pestaniaHistorial" id="pestaniaDos">
 
+                </div>
+            </div>
+            <div class="conversorModal">
+                <div class="modal">
+                    <div class="buttonCerrar">
+                        <input type="button" id="cerrarModal" value="Cerrar">
+                    </div>
+                    <div class="contenidoModal" id="modalConversion">
+                        
+                    </div>
                 </div>
             </div>
         </section>
@@ -173,7 +184,7 @@
 
     <!-- Achivos js -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./script/jquery-3.5.1.js"></script>
     <script src="./script/main.js"></script>
 </body>
 </html>

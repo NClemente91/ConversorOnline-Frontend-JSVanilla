@@ -5,8 +5,35 @@ class Conversor {
         this.deMoneda = deMoneda;
         this.aMoneda = aMoneda;
     }
+
+    multiplicador = () => {
+        let cant = this.cantidad;
+        let deM = this.deMoneda;
+        let aM = this.aMoneda;
+        let cantidadConvertida;
+        let valorMultiplicador;
+        
+        for (const cambios of misDatos) {
+            if(deM === cambios.id ){
+                let claves = Object.keys(cambios);
+                let valores = Object.values(cambios);
+                let cont = 0;
+                for (const clave of claves) {
+                    if(aM==clave){
+                        break;
+                    };
+                    cont++;
+                };
+                valorMultiplicador = valores[cont];
+            }
+        }
+        
+        cantidadConvertida = (cant*valorMultiplicador).toFixed(1);
+        this.resultado = `${cant} ${deM} equivalen a ${cantidadConvertida} ${aM}`
+        return this.resultado;
+    }
     
-    conversorDeMoneda = () => {
+    /*conversorDeMoneda = () => {
         if (this.deMoneda === "ARG" & this.aMoneda === "USD") {
             this.cantidadConvertida = (this.cantidad*0.011).toFixed(1);
             this.resultado = `${this.cantidad} ARG equivalen a ${this.cantidadConvertida} USD`
@@ -34,31 +61,36 @@ class Conversor {
         } else {
             return "Alguno de los datos ingresados es incorrecto"
         }
-    }
-}
-let historialDeConversiones = [];
+    }*/
+};
+
 let generarConversion = () => {
-    let cantidad = parseInt(document.getElementById("Name").value);
-    let deMoneda = document.getElementById("deMoneda").value;
-    let aMoneda = document.getElementById("aMoneda").value;
-    if(cantidad === 0) {
+    let cantidad = (($("#Name"))[0].value);
+    let deMoneda = ($("#deMoneda"))[0].value;
+    let aMoneda = ($("#aMoneda"))[0].value;
+    const URL = "https://jsonplaceholder.typicode.com/posts";
+    if(cantidad === "0" || cantidad === "") {
         alert("Para convertir debe ingresar una cantidad");
     } else if(deMoneda === aMoneda) {
         alert("Ingrese dos monedas distintas");
+    } else if(deMoneda === "Seleccione" || aMoneda === "Seleccione"){
+        alert("Falta ingresar alguna moneda");
     } else {
-        let conversionX = new Conversor(cantidad, deMoneda, aMoneda);
-        let resultadoFinal = conversionX.conversorDeMoneda();
-        localStorage.setItem('Conversion', resultadoFinal);
-        historialDeConversiones.push(resultadoFinal);
-        const nodoPadre = document.getElementById("pestaniaDos");
-        let h3 = document.createElement("h3");
-        h3.className = "estiloH3Historial";
-        let texto = document.createTextNode(resultadoFinal);
-        nodoPadre.appendChild(h3);
-        h3.appendChild(texto);
-        alert(resultadoFinal);
+        let conversionX = new Conversor(parseInt(cantidad), deMoneda, aMoneda);
+        //let resultadoFinal = conversionX.conversorDeMoneda();
+        let resultadoFinal = conversionX.multiplicador();
+        $("#pestaniaDos").append(`<h3>${resultadoFinal}</h3>`);
+        $(".contenidoModal").append(`<h4>${resultadoFinal}</h4>`);
+        $(".conversorContainer").animate({"opacity":0.3});
+        $(".conversorModal").show();
+        $.post(URL,resultadoFinal,(respuesta,estado) =>{
+            if(estado==="success"){
+                //Podría agregar un elemento al html pero lo veo innecesario ya que ya lo hice en otros desafios y en este caso no tiene relevancia
+                console.log("El cambio ha sido guardado");
+            }
+        });
     }
-}
+};
 
 let mostrarQuitar1 = () => {
     pestania1.classList.remove("pestaniaConversor");
@@ -72,9 +104,25 @@ let mostrarQuitar2 = () => {
 const botonConvertir = document.getElementById("convertir");
 botonConvertir.addEventListener("click", generarConversion);
 
+$("#cerrarModal").click(()=>{
+    $(".contenidoModal h4").remove();
+    $(".conversorContainer").animate({"opacity":1});
+    $(".conversorModal").hide("fast");
+});
+
+
 const botonPestaniaConversor = document.getElementById("btnConversor");
 const botonPestaniaHistorial = document.getElementById("btnHistorial");
 const pestania1 = document.getElementById("pestaniaUno");
 const pestania2 = document.getElementById("pestaniaDos");
 botonPestaniaConversor.addEventListener("click", mostrarQuitar1);
 botonPestaniaHistorial.addEventListener("click", mostrarQuitar2);
+
+
+const URLJSON = "../data.json";
+let misDatos;
+$.getJSON(URLJSON, function (respuesta,estado) {
+    if(estado === "success"){
+        misDatos = respuesta;
+    }
+});
