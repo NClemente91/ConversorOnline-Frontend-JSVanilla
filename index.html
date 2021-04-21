@@ -32,7 +32,7 @@
                 </div>
                 <div class="conversorContainerPrincipal" id="pestaniaUno">
                     <div class="containerFormulario">   <!-- formulario -->
-                        <form>
+                        <form id="resetFormulario">
                             <div class="formularioEleccion">
                                 <label for="Name">Cantidad</label>
                                 <input type="number" id="Name" name="Name" />
@@ -41,9 +41,6 @@
                                 <label for="deMoneda">De</label>
                                 <select id="deMoneda">
                                     <option>Seleccione</option>
-                                    <option>ARG</option>
-                                    <option>USD</option>
-                                    <option>EUR</option>
                                 </select>
                             </div>
                             <div class="formularioBoton">
@@ -54,9 +51,6 @@
                                 <label for="aMoneda">A</label>
                                 <select id="aMoneda">
                                     <option>Seleccione</option>
-                                    <option>ARG</option>
-                                    <option>USD</option>
-                                    <option>EUR</option>
                                 </select>
                             </div>
                             <div class="formularioBoton sup">
@@ -92,8 +86,8 @@
                 <p>08 de Marzo 2021, 17:35hs</p>
             </div>
             <div class="tiposDeCambioContainer">
-                <div class="tablaTiposDeCambio">
-                    <div class="encabezadoTiposDeCambio alturaEncabezado">
+                <div class="tablaTiposDeCambio" id="segundaParte">
+                    <!-- <div class="encabezadoTiposDeCambio alturaEncabezado">
                         <div>
                             <span>Moneda</span>
                         </div>
@@ -156,7 +150,7 @@
                         <div>
                             <span>0.0635</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
