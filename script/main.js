@@ -203,7 +203,7 @@ function revertir(){
 }
 
 /*----------------------- LLAMADA -----------------------*/
-const URLJSON = "../finalData.json"
+const URLJSON = "/finalData.json"
 let misDatos = [];
 $.getJSON(URLJSON, function (respuesta,estado) {
     if(estado === "success"){
