@@ -1,62 +1,16 @@
-/*class Conversor {
-    
-    constructor(cantidad, deMoneda, aMoneda) {
-        this.cantidad = cantidad;
-        this.deMoneda = deMoneda;
-        this.aMoneda = aMoneda;
-    }
-
-    multiplicador = () => {
-        let cant = this.cantidad;
-        let deM = this.deMoneda;
-        let aM = this.aMoneda;
-        let cantidadConvertida;
-        let valorMultiplicador;
-        
-        for (const cambios of misDatos) {
-            if(deM === cambios.id ){
-                let claves = Object.keys(cambios);
-                let valores = Object.values(cambios);
-                let cont = 0;
-                for (const clave of claves) {
-                    if(aM==clave){
-                        break;
-                    };
-                    cont++;
-                };
-                valorMultiplicador = valores[cont];
-            }
-        }
-        
-        cantidadConvertida = (cant*valorMultiplicador).toFixed(1);
-        this.resultado = `${cant} ${deM} equivalen a ${cantidadConvertida} ${aM}`
-        return this.resultado;
-    }
-};*/
-
-/*let generarConversion = () => {
-    let cantidad = (($("#Name"))[0].value);
-    let deMoneda = ($("#deMoneda"))[0].value;
-    let aMoneda = ($("#aMoneda"))[0].value;
-    if(cantidad === "0" || cantidad === "") {
-        alert("Para convertir debe ingresar una cantidad");
-    } else if(deMoneda === aMoneda) {
-        alert("Ingrese dos monedas distintas");
-    } else if(deMoneda === "Seleccione" || aMoneda === "Seleccione"){
-        alert("Falta ingresar alguna moneda");
+/*----------------------- LLAMADA -----------------------*/
+let misDatos = [];
+$.getJSON('../finalData.json',(respuesta,estado)=>{
+    if(estado=="success"){
+        misDatos = respuesta;
+        generarOptionSelect(misDatos);
+        generarCambioReal(misDatos[0]);
     } else {
-        let conversionX = new Conversor(parseInt(cantidad), deMoneda, aMoneda);
-        //let resultadoFinal = conversionX.conversorDeMoneda();
-        let resultadoFinal = conversionX.multiplicador();
-        $("#pestaniaDos").append(`<h3>${resultadoFinal}</h3>`);
-        $(".contenidoModal").append(`<h4>${resultadoFinal}</h4>`);
-        $(".conversorContainer").animate({"opacity":0.3});
-        $(".conversorModal").show();
+        console.log(estado);
     }
-};*/
+})
 
 /*----------------------- PARTE REALIZADA CON JS PURO -----------------------*/
-
 function mostrarQuitar1() {
     pestania1.classList.remove("pestaniaConversor");
     pestania2.classList.add("pestaniaHistorial");
@@ -144,7 +98,6 @@ function cambiarTipoDeCambioTR(e){
     for (const key in misDatos) {
         if(misDatos[key].denominacion==denominacionMoneda){
             objetoMoneda = misDatos[key]
-            console.log(objetoMoneda);
             $("#segundaParte").empty();
             generarCambioReal(objetoMoneda);
         }
@@ -202,38 +155,9 @@ function revertir(){
     $("#deMoneda")[0].value = valorB;
 }
 
-/*----------------------- LLAMADA -----------------------*/
-/*const URLJSON = "../finalData.json"
-let misDatos = [];
-$.getJSON(URLJSON, function (respuesta,estado) {
-        misDatos = respuesta;
-        generarOptionSelect(misDatos);
-        generarCambioReal(misDatos[0]);
-});*/
-let misDatos = [];
-/*fetch('../finalData.json')
-    .then(response => response.json())
-    .then(data => {
-        misDatos = data;
-        //console.log(misDatos);
-        generarOptionSelect(misDatos);
-        generarCambioReal(misDatos[0]);
-    })*/
-
-$.when( $.get('../finalData.json') )
-    .then(response => {
-        misDatos = response;
-        console.log(misDatos);
-        generarOptionSelect(misDatos);
-        generarCambioReal(misDatos[0]);
-    })
-    .catch(err => {
-        console.log(err);
-    })
-
 /*----------------------- EVENTOS -----------------------*/
 $(document).ready(function () {
-    $(".cambioDeUbicacion").click(cambiarTipoDeCambioTR)
+    $(".cambioDeUbicacion").click(cambiarTipoDeCambioTR);
     $("#convertir").click(Conversion);
     $("#cerrarModal").click(()=>{
         $(".contenidoModal h3").remove();
@@ -242,4 +166,3 @@ $(document).ready(function () {
     });
     $("#revertir").click(revertir);
 });
-
