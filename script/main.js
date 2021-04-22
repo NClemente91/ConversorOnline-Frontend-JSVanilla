@@ -1,6 +1,6 @@
 /*----------------------- LLAMADA -----------------------*/
 let misDatos = [];
-$.getJSON('../finalData.json',(respuesta,estado)=>{
+$.getJSON('https://nclemente91.github.io/ProyectoJavaScriptClemente/finalData.json',(respuesta,estado)=>{
     if(estado=="success"){
         misDatos = respuesta;
         generarOptionSelect(misDatos);
@@ -43,7 +43,7 @@ function generarCambioReal(monedaPpal) {
                                             <span>Moneda</span>
                                         </div>
                                         <div>
-                                            <span>Importe</span>
+                                            <span>Cantidad</span>
                                         </div>
                                     </div>`);
     for (const subValor in monedaPpal) {
@@ -100,6 +100,7 @@ function cambiarTipoDeCambioTR(e){
             objetoMoneda = misDatos[key]
             $("#segundaParte").empty();
             generarCambioReal(objetoMoneda);
+            $(".cambioDeUbicacion").click(cambiarTipoDeCambioTR);
         }
     }
 }
