@@ -211,13 +211,24 @@ $.getJSON(URLJSON, function (respuesta,estado) {
         generarCambioReal(misDatos[0]);
 });*/
 let misDatos = [];
-fetch('../finalData.json')
+/*fetch('../finalData.json')
     .then(response => response.json())
     .then(data => {
         misDatos = data;
         //console.log(misDatos);
         generarOptionSelect(misDatos);
         generarCambioReal(misDatos[0]);
+    })*/
+
+$.when( $.get('../finalData.json') )
+    .then(response => {
+        misDatos = response;
+        console.log(misDatos);
+        generarOptionSelect(misDatos);
+        generarCambioReal(misDatos[0]);
+    })
+    .catch(err => {
+        console.log(err);
     })
 
 /*----------------------- EVENTOS -----------------------*/
