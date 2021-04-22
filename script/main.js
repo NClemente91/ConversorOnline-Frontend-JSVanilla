@@ -203,13 +203,22 @@ function revertir(){
 }
 
 /*----------------------- LLAMADA -----------------------*/
-const URLJSON = "../finalData.json"
+/*const URLJSON = "../finalData.json"
 let misDatos = [];
 $.getJSON(URLJSON, function (respuesta,estado) {
         misDatos = respuesta;
         generarOptionSelect(misDatos);
         generarCambioReal(misDatos[0]);
-});
+});*/
+let misDatos = [];
+fetch('../finalData.json')
+    .then(response => response.json())
+    .then(data => {
+        misDatos = data;
+        //console.log(misDatos);
+        generarOptionSelect(misDatos);
+        generarCambioReal(misDatos[0]);
+    })
 
 /*----------------------- EVENTOS -----------------------*/
 $(document).ready(function () {
@@ -222,3 +231,4 @@ $(document).ready(function () {
     });
     $("#revertir").click(revertir);
 });
+
