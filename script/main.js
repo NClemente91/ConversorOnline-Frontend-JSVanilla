@@ -206,11 +206,9 @@ function revertir(){
 const URLJSON = "../finalData.json"
 let misDatos = [];
 $.getJSON(URLJSON, function (respuesta,estado) {
-    if(estado === "success"){
         misDatos = respuesta;
         generarOptionSelect(misDatos);
         generarCambioReal(misDatos[0]);
-    }
 });
 
 /*----------------------- EVENTOS -----------------------*/
