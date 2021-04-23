@@ -218,13 +218,14 @@ footer{
 .tiposDeCambio{
     min-width: 320px;
     width: 90%;
-    height: 660px;
+    height: 680px;
     margin: 0 auto;
 }
 .tiposDeCambioTitulo{
+    width: 80%;
     height: 80px;
     position: relative;
-    top: 20px;
+    top: 30px;
     margin: 0 auto;
 }
 .tiposDeCambioTitulo h2{
@@ -242,10 +243,10 @@ footer{
 }
 .tiposDeCambioContainer{
     width: 90%;
-    height: 540px;
+    height: 560px;
     margin: 0 auto;
     position: relative;
-    top: 30px;
+    top: 40px;
 }
 .tablaTiposDeCambio{
     width: 95%;

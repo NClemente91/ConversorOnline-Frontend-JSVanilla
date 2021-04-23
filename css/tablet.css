@@ -22,3 +22,11 @@
 .primariaTiposDeCambio{
     height: 50px;
 }
+
+.tiposDeCambio{
+    height: 660px;
+}
+.tiposDeCambioTitulo{
+    height: 50px;
+    top: 40px;
+}
