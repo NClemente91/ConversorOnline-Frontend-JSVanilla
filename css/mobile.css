@@ -154,7 +154,7 @@ footer{
     margin: 5px auto;
 }
 .conversorContainerHistorial{
-    overflow: scroll;
+    overflow: auto;
 }
 .containerFormulario{
     width: 90%;
