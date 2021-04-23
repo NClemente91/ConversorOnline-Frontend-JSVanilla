@@ -1,10 +1,11 @@
 /*----------------------- LLAMADA -----------------------*/
 let misDatos = [];
-$.getJSON('https://nclemente91.github.io/ProyectoJavaScriptClemente/finalData.json',(respuesta,estado)=>{
+$.get('https://nclemente91.github.io/ProyectoJavaScriptClemente/finalData.json',(respuesta,estado)=>{
     if(estado=="success"){
         misDatos = respuesta;
         generarOptionSelect(misDatos);
         generarCambioReal(misDatos[0]);
+        $(".cambioDeUbicacion").click(cambiarTipoDeCambioTR);
     } else {
         console.log(estado);
     }
@@ -94,7 +95,7 @@ function buscarNombreBandera(listado,codigo){
 }
 
 function cambiarTipoDeCambioTR(e){
-    denominacionMoneda = e.target.id;
+    let denominacionMoneda = e.target.id;
     for (const key in misDatos) {
         if(misDatos[key].denominacion==denominacionMoneda){
             objetoMoneda = misDatos[key]
@@ -158,12 +159,12 @@ function revertir(){
 
 /*----------------------- EVENTOS -----------------------*/
 $(document).ready(function () {
-    $(".cambioDeUbicacion").click(cambiarTipoDeCambioTR);
     $("#convertir").click(Conversion);
     $("#cerrarModal").click(()=>{
         $(".contenidoModal h3").remove();
         $(".conversorContainer").animate({"opacity":1});
         $(".conversorModal").hide("fast");
     });
+    $(".cambioDeUbicacion").click(cambiarTipoDeCambioTR);
     $("#revertir").click(revertir);
 });

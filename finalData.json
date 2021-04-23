@@ -14,7 +14,7 @@
 },
 {
     "id": "USD",
-    "denominacion":"Dolar Estadounidense",
+    "denominacion":"Dolar EEUU",
     "logo": "./assets/logosBanderas/logoUSD.svg",
     "ARS": 92.8160,
     "EUR": 0.8346,
