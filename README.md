@@ -8,7 +8,6 @@ Temas vistos y aplicados en el sitio web:
 ```bash
 JAVASCRIPT
 JQUERY
-Complementarios:
 HTML 
 CSS
 ```
